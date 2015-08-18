@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'projects',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -58,8 +59,11 @@ WSGI_APPLICATION = 'itto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'itto',
+        'USER': 'darnell',
+        'PASSWORD': 'Deenell31',
+        'HOST' : '192.168.1.14'
     }
 }
 
