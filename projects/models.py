@@ -17,3 +17,25 @@ class Project(models.Model):
 
     def __unicode__(self):
         return self.project_code
+
+class Time(models.Model):
+    user = models.ForeignKey(User)
+    project = models.ForeignKey(Project)
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()
+    work_type_register = (
+        ('PM', 'Project Manager'),
+        ('DEV', 'Development'),
+        ('IT', 'IT'),
+        ('SERVER', 'Server Admin'),
+        ('GFX', 'Graphic Design'),
+        ('DEV_LEAD', 'LEAD Development'),
+    )
+    work_type = models.CharField(max_length=25, choices=work_type_register)
+    notes = models.TextField()
+
+    created_time = models.DateTimeField(auto_now_add = True)
+    modified_time = models.DateTimeField(auto_now = True)
+
+    def __unicode__(self):
+        return "%s | %s | %s" % (self.project.project_code,self.work_type, self.notes)
