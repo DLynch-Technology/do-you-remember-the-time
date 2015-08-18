@@ -1,0 +1,6 @@
+config.py
+*.pyc
+/static/
+
+*.DS_Store
+
