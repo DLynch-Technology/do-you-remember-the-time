@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 class Project(models.Model):
     name = models.CharField(max_length=50)
     project_code = models.CharField(max_length=6)
+    goals = models.TextField(null=True,blank=True)
     date_start = models.DateField(null=True,blank=True)
     date_expected = models.DateField(null=True,blank=True)
     date_completion = models.DateField(null=True,blank=True)
