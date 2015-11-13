@@ -19,6 +19,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'jnvq8ee^@81cm%3w8pvsdc)kas4cd8np1$hd8^8nt)3vjhjr9g'
 
+import itto.config as CF
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -60,10 +62,10 @@ WSGI_APPLICATION = 'itto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'itto',
-        'USER': 'darnell',
-        'PASSWORD': 'Deenell31',
-        'HOST' : '192.168.1.14'
+        'NAME': CF.mysql_db,
+        'USER': CF.mysql_user,
+        'PASSWORD': CF.mysql_password,
+        'HOST' : CF.mysql_host,
     }
 }
 
